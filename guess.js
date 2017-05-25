@@ -14,5 +14,18 @@ var colorDisplay = document.getElementById('color-display')
 colorDisplay.textContent = pickedColor
 
 for(var i = 0; i < squares.length; i++){
+  //add initial colors to squares
   squares[i].style.backgroundColor = colors[i]
+
+  //add click listeners to squares
+  squares[i].addEventListener('click', function(){
+    //select color of clicked square
+    var clickedColor = this.style.background
+    //compare color to pickedColor
+    if(clickedColor === pickedColor){
+      alert('Correct :)')
+    }  else{
+        alert('Wrong :(')
+      }
+    })
 }
