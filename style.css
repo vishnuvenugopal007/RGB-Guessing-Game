@@ -5,7 +5,6 @@ body {
 .square {
   /* Setting three squares per row */
   width: 30%;
-  background: purple;
   padding-bottom: 30%;
   float: left;
 
@@ -20,5 +19,9 @@ body {
 }
 
 h1 {
+  color: white;
+}
+
+span {
   color: white;
 }
