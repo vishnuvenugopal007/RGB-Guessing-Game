@@ -8,14 +8,14 @@ var colors = [
 ]
 
 var squares = document.querySelectorAll('.square')
-var pickedColor = colors[3]
+var pickedColor = pickColor()
 var colorDisplay = document.getElementById('color-display')
 var messageDisplay = document.querySelector('#message')
 colorDisplay.textContent = pickedColor
 
 for(var i = 0; i < squares.length; i++){
   //add initial colors to squares
-  squares[i].style.backgroundColor = colors[i]
+  squares[i].style.background = colors[i]
 
   //add click listeners to squares
   squares[i].addEventListener('click', function(){
@@ -41,4 +41,9 @@ function changeColors(color){
     //change squares to match correct color
     squares[i].style.background = color
   }
+}
+
+function pickColor(){
+  var random = Math.floor(Math.random() * colors.length)
+  return colors[random]
 }
