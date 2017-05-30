@@ -9,11 +9,18 @@ var h1 = document.querySelector('h1')
 var resetButton = document.querySelector('#reset')
 var modeButtons = document.querySelectorAll('.mode')
 
+var game = {}
 
-init()
+game.init()
 
-function init(){
+game.init = function init(){
   //modebutton event listeners
+  setupModeButtons()
+  setupSquares()
+  reset()
+}
+
+function setupModeButtons(){
   for(var i = 0; i < modeButtons.length; i++){
     modeButtons[i].addEventListener('click', function(){
       modeButtons[0].classList.remove('selected')
@@ -23,10 +30,12 @@ function init(){
       reset()
     })
   }
+}
 
-  for(var n = 0; n < squares.length; n++){
+function setupSquares(){
+  for(var i = 0; i < squares.length; i++){
     //add click listeners to squares
-    squares[n].addEventListener('click', function(){
+    squares[i].addEventListener('click', function(){
       //select color of clicked square
       var clickedColor = this.style.background
       //compare color to pickedColor
@@ -44,9 +53,7 @@ function init(){
         }
       })
   }
-  reset()
 }
-
 
 
 function reset(){
