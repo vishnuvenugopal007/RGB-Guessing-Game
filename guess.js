@@ -6,6 +6,18 @@ var colorDisplay = document.getElementById('color-display')
 var messageDisplay = document.querySelector('#message')
 var h1 = document.querySelector('h1')
 var resetButton = document.querySelector('#reset')
+var easyButton = document.querySelector('easy-button')
+var hardButton = document.querySelector('hard-button')
+
+easyButton.addEventListener('click', function(){
+  easyButton.classList.add('selected')
+  hardButton.classList.remove('selected')
+})
+
+hardButton.addEventListener('click', function(){
+  hardButton.classList.add('selected')
+  easyButton.classList.remove('selected')
+})
 
 colorDisplay.textContent = pickedColor
 
